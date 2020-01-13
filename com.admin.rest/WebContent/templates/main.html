@@ -1,0 +1,14 @@
+<div class="main">
+	<form name="search" ng-keyup="main_ctrl.update()" role="form">
+		<label for="search">Search</label>
+		<input type="text" name="search" ng-model="main_ctrl.search"/><br>
+	</form>
+	<div class="main_row">
+		<div class="side_menu">
+		    <div ng-repeat="item in main_ctrl.stations" ng-include="'templates/node.html'"></div>
+		</div>
+		<div class="canvas">
+			<div ng-include="main_ctrl.visible.client.type === 'robot' ? 'templates/robot.html' : 'templates/user.html'"></div>
+		</div>
+	</div>
+</div>

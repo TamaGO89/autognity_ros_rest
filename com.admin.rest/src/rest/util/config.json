@@ -1,0 +1,143 @@
+{
+	"ADMIN_ONETIMEPASSWORD_delete_this_entry":"QROG86",
+	
+	"database":{
+		"protocol":"mysqlx",
+		"host":"127.0.0.1",
+		"port":33060,
+		"schema":"autognity_db_593408",
+		"log_length":8,
+		"managers": [{
+			"priority":999,
+			"username":"login_104869",
+			"password":"qudLenrbijxdj9ZI",
+			"name":"login"
+		},{
+			"priority":10,
+			"username":"robot_980236",
+			"password":"5SYwHsqybEPabNzh",
+			"name":"robot"
+		},{
+			"priority":20,
+			"username":"user_012958",
+			"password":"frzuhhmseSz1Degn",
+			"name":"user"
+		},{
+			"priority":1000,
+			"username":"admin_577341",
+			"password":"1FiA9HY2ITo6OGQu",
+			"name":"admin"
+		},{
+			"priority":1,
+			"username":"guest_591932",
+			"password":"z27CcDNwR0Evjl60",
+			"name":"guest"
+		},{
+			"priority":0,
+			"username":"base_130849",
+			"password":"0Av9dD4USJDTqerS",
+			"name":"base"
+		}]
+	},
+	
+	"mail":{
+		"protocol":"smtp",
+		"host":"mail.zappeers.com",
+		"port":587,
+		"managers": [{
+			"addr":"andrea@zappeers.com",
+			"bcc":"fenrix89@gmail.com",
+			"username":"andrea@zappeers.com",
+			"password":"zpp_TGO_89",
+			"name":"signin"
+		}],
+		"templates": [{
+			"subject":"Dear ${fname} ${lname}, please verify your account",
+			"text":["Go to the login screen and verify your account with the code [${otp}], you have ${expires} hours"],
+			"name":"new_user"
+		},
+		{
+			"subject":"Dear ${fname} ${lname}, keep your credentials in a safe place",
+			"text":[
+				"Keep your credentials in a safe place",
+				"\tusername : ${user}\n\tpassword : ${pass}",
+				"contact your administrator to improve your privileges"
+			],
+			"name":"activate_user"
+		},{
+			"subject":"${name} is been registered",
+			"text":[
+				"To initialize your machine run the following command",
+				"path/to_the/package/initialize_launcher.py -u ${username} -p ${password} -k [Chose a secure passphrase]",
+				"the passphrase of your choice will be used to encrypt the username and the password, safe from any unintended manipulation",
+				"the passphrase must contain at least one lowercase character, one uppercase character, one digit and one special character (-_/+)"
+			],
+			"name":"new_robot"
+		}]
+	},
+
+	"authentication":{
+		"auth":"Authorization",
+		"basic":"Basic",
+		"token":"Token",
+		"signin":"OneTimePass",
+		"cookie":"Set-Cookie",
+		"id":"id",
+		"logger":"logger",
+		"split":"\n__$$$__\n",
+		"log_max":49000,
+		"token_expires":1440,
+		"token_delay":1,
+		"token_memory":5,
+		"confidential":"####"
+	},
+	
+	"resources":{
+		"unknown_type":"Wrong authentication type",
+		"user_pass":"No matching user or password",
+		"missingid":"your ID went missing",
+		"roledenied":"Your roles are not suited for this resource",
+		"bad_request":"bad request",
+		"not_authorized":"not authorized",
+		"forbidden":"forbidden",
+		"not_found":"not found",
+		"not_allowed":"not allowed",
+		"not_acceptable":"not acceptable",
+		"not_supported":"not supported",
+		"server_error":"server error",
+		"base_url":"/com.admin.rest",
+		"stack_size":5
+	},
+
+	"cryptography":{
+		"argon_duration":1000,
+		"argon_memory":65536,
+		"argon_parallelism":1,
+		"argon_iterations":10,
+		"digest_algorithm":"SHA-256",
+		"random_algorithm":"SHA1PRNG",
+		"random_length":32,
+		"rsa_algorithm":"RSA",
+		"rsa_begin":"-----BEGIN PUBLIC KEY-----",
+		"rsa_end":"-----END PUBLIC KEY-----",
+		"password_characters":"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_/+-",
+		"password_length":16,
+		"onetimep_characters":"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+		"onetimep_length":6,
+		"base_regex":"^[A-Za-z0-9_/+-]{4,16}$",
+		"name_regex":"^[A-Za-z]{4,16}$",
+		"user_regex":"^[A-Za-z0-9_/+-]{8,16}$",
+		"pass_regex":"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[_/+-])[A-Za-z0-9_/+-]{8,16}$",
+		"email_regex":"^[A-Za-z0-9+_.-]+@(.+)$",
+		"similarity_length":4,
+		"account_expires":525600,
+		"signin_expires":1440
+	},
+	
+	"filesystem":{
+		"base_path":"C:/ros_temp",
+		"folder_size":1000,
+		"folder_depth":3,
+		"file_extension":"bag"
+	}
+}

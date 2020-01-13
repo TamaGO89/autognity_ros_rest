@@ -1,0 +1,8 @@
+<div class="header">
+    <a ng-repeat="item in ctrl.menu"
+       class="item"
+       ng-class="{'active': item.id == ctrl.active}"
+       ng-click="ctrl.navigate(item)">
+        {{item.name}}
+    </a>
+</div>

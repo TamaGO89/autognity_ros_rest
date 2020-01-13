@@ -1,0 +1,40 @@
+<form name="login" ng-submit="login_ctrl.login()" role="form" ng-show="login_ctrl.show === 0">
+	<label for="l_username">Username</label>
+		<input type="text" name="l_username" autocomplete="username" ng-model="login_ctrl.l_username" required/><br>
+	<label for="l_password">Password</label>
+		<input type="password" name="l_password" autocomplete="current-password" ng-model="login_ctrl.l_password" required/><br>
+	<button ng-click="login_ctrl.login()">LOGIN</button>
+	<button ng-click="login_ctrl.toggle(1)">SIGNIN</button>
+	<button ng-click="login_ctrl.toggle(2)">VERIFY</button>
+	<div class="message">{{ login_ctrl.l_message }}</div><div class="alert">{{ login_ctrl.l_alert }}</div>
+</form>
+<form name="signin" ng-submit="login_ctrl.signin()" role="form" ng-show="login_ctrl.show === 1">
+	<label for="s_public">Public Name</label>
+		<input type="text" name="s_public" ng-model="login_ctrl.s_public" required/><br>
+	<label for="s_address">e-mail address</label>
+		<input type="text" name="s_address" ng-model="login_ctrl.s_address" required/><br>
+	<label for="s_firstname">First Name</label>
+		<input type="text" name="s_firstname" ng-model="login_ctrl.s_firstname" required/><br>
+	<label for="s_lastname">Last Name</label>
+		<input type="text" name="s_lastname" ng-model="login_ctrl.s_lastname" required/><br>
+	<button ng-click="login_ctrl.signin()">SIGNIN</button>
+	<button ng-click="login_ctrl.toggle(0)">LOGIN</button>
+	<div class="message">{{ login_ctrl.s_message }}</div><div class="alert">{{ login_ctrl.s_alert }}</div>
+</form>
+<form name="verify" ng-submit="login_ctrl.verify()" role="form" ng-show="login_ctrl.show === 2">
+	<label for="v_onetimepass">One Time Password</label>
+		<input type="password" name="v_onetimepass" ng-model="login_ctrl.v_onetimepass" required/><br>
+	<button ng-click="login_ctrl.verify()">VERIFY</button>
+	<div class="message">{{ login_ctrl.v_message }}</div><div class="alert">{{ login_ctrl.v_alert }}</div>
+</form>
+<form name="activate" ng-submit="login_ctrl.activate()" role="form" ng-show="login_ctrl.show === 3">
+	{{ login_ctrl.temporary }}<br>
+	<label for="a_username">Username</label>
+		<input type="text" name="a_username" autocomplete="username" ng-model="login_ctrl.a_username" required/><br>
+	<label for="a_password">Password</label>
+		<input type="password" name="a_password" ng-model="login_ctrl.a_password" required/><br>
+	<label for="a_password2">Repeat Password</label>
+		<input type="password" name="a_password2" ng-model="login_ctrl.a_password2" required/><br>
+	<button ng-click="login_ctrl.activate()">ACTIVATE</button>
+	<div class="message">{{ login_ctrl.a_message }}</div><div class="alert">{{ login_ctrl.a_alert }}</div>
+</form>

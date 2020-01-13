@@ -1,0 +1,14 @@
+<div>ROBOT {{ main_ctrl.visible.client }}</div>
+<div>
+</div>
+<div>{{ main_ctrl.visible.config }}</div>
+<div></div>
+<div id="{{ item.client.name + '_' + item.id }}" ng-repeat="item in main_ctrl.visible.infos">
+	{{ item }}
+	<div class="content" style="background-color:grey" ng-click="main_ctrl.download(item)">
+		{{ item.content }}
+	</div>
+	<div class="secret" style="background-color:red" ng-repeat="secret in item.secrets">
+		{{ secret }}
+	</div>
+</div>

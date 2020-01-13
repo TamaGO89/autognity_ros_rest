@@ -1,0 +1,11 @@
+<div ng-click=main_ctrl.toggle(item) class="node_entity station">
+	{{item.name}}
+</div>
+<div ng-hide="item.hide" class="sub_station">
+	<div ng-repeat="item in item.sub" ng-include="'templates/node.html'"></div>
+	<div ng-repeat="item in item.elem">
+		<div ng-click=main_ctrl.set_visible(item) ng-hide="item.hide" class="node_entity user">
+			<div>{{ item.client.type }} {{ item.client.name }}</div>
+		</div>
+	</div>
+</div>
