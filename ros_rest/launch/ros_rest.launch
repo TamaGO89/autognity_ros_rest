@@ -1,0 +1,36 @@
+<launch>
+    <arg name="key" />
+    <node name="ros_rest" output="screen" pkg="ros_rest" respawn="true" type="__init__.py" args="$(arg key)">
+
+        <param name="host" type="str" value="http://192.168.1.5:8080/com.admin.rest/ros_rest" />
+        <param name="paths" type="str" value="/log/paths" />
+        <param name="token" type="str" value="Token" />
+
+        <param name="exception_sleep" type="double" value="60.0" />
+        <param name="queue_size" type="int" value="10" />
+        <param name="thread_size" type="int" value="5" />
+        <param name="session_size" type="int" value="1" />
+        <param name="post_retry" type="int" value="3" />
+        <param name="raw_size" type="int" value="192" />
+
+        <param name="rec_path" type="str" value="/temp/" />
+        <param name="rec_prefix" type="str" value="restrecord_" />
+        <param name="rec_size" type="str" value="50" />
+        <param name="rec_time" type="str" value="10" />
+        <param name="rec_splits" type="str" value="5" />
+        <param name="rec_zip" type="str" value="lz4" />
+        <param name="rec_node" type="str" value="ros_rest_record" />
+
+        <param name="regex_user_pass" type="str" value="^[A-Za-z0-9_/+-]{16}$" />
+        <param name="regex_key" type="str" value="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[_/+-])[A-Za-z0-9_/+-]{8,16}$" />
+        <param name="username" type="str" value="--11YgtcLXXQG_1FP8be7Q==" />
+        <param name="password" type="str" value="Y58Nwj3GBPc8jyOZMInezg==" />
+        <param name="a2_salt_length" type="int" value="32" />
+        <param name="a2_salt" type="str" value="AB5d3LFyC59bM9ZI3HlwJ6fl-DmsNrEU7aUHqOZxyZzdGI-wVZVEFnnQNg6ABlFwIAfwjkzS" />
+        <param name="a2_time" type="int" value="16" />
+        <param name="a2_mem" type="int" value="32768" />
+        <param name="a2_paral" type="int" value="2" />
+        <param name="aes_size" type="int" value="2" />
+
+    </node>
+</launch>
