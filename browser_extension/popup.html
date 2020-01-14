@@ -2,24 +2,25 @@
 <html>
     <head>
         <title>Title</title>
-        <style>
-            body {
-                font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-                font-size: 100%;
-            }
-            #status {
-                white-space: pre;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                max-width: 400px;
-            }
-        </style>
 		<script src="js/jquery-3.4.1.min.js"></script>
 		<script src="js/forge.all.js"></script>
-		<script src="js/params.js"></script>
         <script src="js/popup.js"></script>
     </head>
     <body>
-        <p id="text"></p>
+	<form name="signin" id="set_key_form" role="form">
+		<label for="username">username</label>
+			<input type="text" name="username" id="set_user" required/><br>
+		<label for="password">password</label>
+			<input type="password" name="password" id="set_pass" required/><br>
+		<label for="master_key">master key</label>
+			<input type="text" name="master_key" id="set_key" required/><br>
+		<button id="set_key_button">SET KEY</button>
+	</form>
+	<form name="signin" id="get_key_form" role="form">
+		<label for="master_key">master key</label>
+			<input type="text" name="master_key" id="get_key" required/><br>
+		<button id="get_key_button">GET KEY</button>
+	</form>
+	<div id="popup_message"></div>
     </body>
 </html>

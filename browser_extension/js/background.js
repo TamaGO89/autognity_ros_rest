@@ -1,3 +1,4 @@
+const browser_obj = (typeof chrome !== "undefined") ? chrome : browser;
 let forge_elem = document.createElement("script");
 forge_elem.src = browser_obj.extension.getURL("forge/forge.all.min.js");
 let script_init = setInterval(function() {
