@@ -67,7 +67,7 @@ public class CryptUtils {
 	public static String decodeToString(String data) {
 		return new String(BASE64_DECODER.decode(data.replaceAll("\\+", "-").replaceAll("/", "_"))); }
 	public static String verifyPublicKey(String public_key) throws InvalidKeySpecException, NoSuchAlgorithmException {
-		public_key = public_key.replaceAll("\\n", "").replace(RSA_BEGIN, "").replace(RSA_END, "")
+		public_key = public_key.replace(RSA_BEGIN, "").replace(RSA_END, "").replaceAll("\\s", "")
 							   .replaceAll("\\+", "-").replaceAll("/", "_");
 		KeyFactory.getInstance(RSA_ALGORITHM).generatePublic(new X509EncodedKeySpec(BASE64_DECODER.decode(public_key)));
 		return public_key;
